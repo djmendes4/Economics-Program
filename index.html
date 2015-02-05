@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+
+<head>
+    <script src="econ.js"></script>
+    <link rel="stylesheet" type="text/css" href="econ.css">
+</head>
+
+<body>
+    <section id="container">
+		<header id="formHeader"><p id="title">Financial Calculator</p></header>
+        <div id="formContainer">
+<!--		This menu allows for the implementation of different cash flow: Principals, Annuities, and Gradients-->
+			<section id="flowType">
+				<select id="addFlowElement" name="addFlowElement" form="economics">
+					<option name="blankFlow" value="0" default selected disabled hidden>Select Flow Type</option>
+					<option name="principalFlow" value="1">Principal</option>
+					<option name="annuityFlow" value="2">Annuity</option>
+					<option name="gradientFlow" value="3">Gradient</option>
+				</select>
+			</section>
+<!--		This form will be generated after selecting an option from the section above-->
+<!--		On changing from one flow type to another, the form will be regenerated, but the information previously entered will be retained-->
+			<section id="flowParameters" class="flow">
+				<form name="economics">
+				</form>
+			</section>
+        </section>
+    </section>
+</body>

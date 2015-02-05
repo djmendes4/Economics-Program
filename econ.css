@@ -1,0 +1,56 @@
+#container {
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+	top: 12px;
+}
+
+#formHeader {
+	width: inherit;
+	height: 40px;
+	margin: 8px -8px;
+	padding: 8px;
+	background-color: rgba(0,0,0,0.3);
+}
+
+#formHeader > p#title {
+	width: inherit;
+	height: inherit;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+#formContainer {
+	width: 25%;
+	height: auto;
+	margin: 8px -8px;
+	padding: 8px;
+	background-color: rgba(0,0,0,0.3);
+}
+
+#flowType > select#addFlowElement {
+	width: 60%;
+	height: 19px;
+	display: inherit;
+	margin: 0 auto;
+	text-indent: 4px;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+	margin: 0;
+}
+
+input.default {
+	font-weight: bold;
+	color: rgba(0,0,0,0.6);
+}
