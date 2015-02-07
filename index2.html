@@ -1,0 +1,52 @@
+    <div id="container">
+        <section id="content">
+<!--		This menu allows for the implementation of different cash flow: Principals, Annuities, and Gradients-->
+			<section id="transactionType">
+				<fieldset class="radio-container">
+					<div class="radio-options">
+						<div class="toggle">Choose Payment Type</div>
+						<ul>
+							<li>
+								<input id="choice1" type="radio" name="paymentType" value="singlePayment">
+								<label for="choice1">Single Transaction</label>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<input id="choice2" type="radio" name="paymentType" value="equalPayments">
+								<label for="choice2">Equal Transactions</label>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<input id="choice3" type="radio" name="paymentType" value="unequalPayments">
+								<label for="choice3">Unequal Transactions</label>
+							</li>
+						</ul>
+					</div>
+				</fieldset>
+			</section>
+<!--		This form will be generated after selecting an option from the section above-->
+<!--		On changing from one flow type to another, the form will be regenerated, but the information previously entered will be retained-->
+			<section id="flowParameters" class="flow">
+				<form id="economics" name="economics">
+					<fieldset id="singlePaymentSeries" name="singlePaymentSeries" form="economics">
+<!--					This input represents the name of the earning or payment-->
+<!--					Example: Principal Investment, Dividend, Salvage Value, etc.-->
+						<div><p>Title</p><input type="text" name="name" value="Name"></div>
+<!--					This input represents a single sum payment or earning (principal investment, installation cost, salvage value, etc.)-->
+						<div><p>Amount</p><input type="number" name="amount" value="0"></div>
+<!--					This input represents the interest rate of the account, or the time value change of money-->
+						<div><p>Interest Rate</p><input type="number" name="interestRate" value="0"></div>
+<!--					This input represents the time at which the single sum is earned or payed-->
+						<div><p>Payment Time</p><input type="number" name="time" value="0"></div>
+<!--					This input supplies a description of the earning or payment-->
+<!--					Example: Invested $20 in a college savings account for Khloe-->
+						<div><p>Description</p><input type="textarea" name="description" value="Description"></div>
+<!--					This input represents the submit button, after which some functional code will be executed-->
+						<div><input type="submit" value="Submit"></div>
+					</fieldset>
+				</form>
+			</section>
+        </section>
+    </div>

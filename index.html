@@ -2,28 +2,32 @@
 
 <head>
     <script src="econ.js"></script>
+	<script src="menu.js"></script>
+	<link rel="stylesheet" type="text/css" href="flex.css">
     <link rel="stylesheet" type="text/css" href="econ.css">
+	<link rel="stylesheet" type="text/css" href="menu.css">
 </head>
 
 <body>
-    <section id="container">
-		<header id="formHeader"><p id="title">Financial Calculator</p></header>
-        <div id="formContainer">
-<!--		This menu allows for the implementation of different cash flow: Principals, Annuities, and Gradients-->
-			<section id="flowType">
-				<select id="addFlowElement" name="addFlowElement" form="economics">
-					<option name="blankFlow" value="0" default selected disabled hidden>Select Flow Type</option>
-					<option name="principalFlow" value="1">Principal</option>
-					<option name="annuityFlow" value="2">Annuity</option>
-					<option name="gradientFlow" value="3">Gradient</option>
-				</select>
-			</section>
-<!--		This form will be generated after selecting an option from the section above-->
-<!--		On changing from one flow type to another, the form will be regenerated, but the information previously entered will be retained-->
-			<section id="flowParameters" class="flow">
-				<form name="economics">
-				</form>
-			</section>
-        </section>
-    </section>
+
+
+	<div class="outer-wrapper">
+		<header class="header content"><p class="title">Cash Flow Analysis</p></header>
+
+		<div class="inner-wrapper">
+			<section class="section section-1 content">Section 1</section>
+
+			<section class="section section-2 content">Section 2</section>
+
+			<section class="section section-3 content">Section 3</section>
+
+			<section class="section section-4 content"></section>
+		</div>
+
+		<section class="section section-5 content">Section 5</section>
+
+		<footer class="footer content">Footer</footer>
+	</div>
+
+
 </body>

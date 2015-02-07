@@ -1,0 +1,93 @@
+.radio-container {
+  position: relative;
+  height: 4em; /* 3em (being the max-height of the inner container) + 1em ("margin") */
+ }
+.radio-container:hover {
+    z-index: 9999; }
+
+.radio-options {
+  position: absolute;
+  max-height: 3em;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.7s;
+}
+.radio-options:hover {
+  max-height: 100em;
+}
+
+.radio-options .toggle {
+    position: relative;
+    cursor: pointer;
+    padding: 0.75em;
+    background: darkgreen;
+    border-radius: 10px;
+    z-index: 1; }
+/* li are stacked at the same position as .toggle, only .toggle is visible */
+  .radio-options li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .radio-options label {
+    display: block;
+    opacity: 0;
+    transition: 0s; }
+
+.radio-options input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 3em;
+  opacity: 0;
+  z-index:1;
+  cursor: pointer;
+}
+
+/* li elements have a normal flow within the .radio-options container */
+.radio-options:hover li {
+    position: relative; }
+.radio-options:hover label {
+    opacity: 1;
+    transition: 0.5s; }
+
+.radio-options input:checked ~ label {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   opacity: 1;
+/* is above the .toggle so is visible */
+   z-index: 2;
+/* has tha same styles as .toggle */
+   padding: 0.75em;
+   background: darkgreen;
+   border-radius: 10px; }
+
+.radio-options:hover input:checked ~ label {
+  position: static;
+  border-radius: 0; }
+
+.no-touch .radio-container:hover, .active.radio-container  {
+    z-index: 9999; }
+.no-touch .radio-options:hover, .active .radio-options {
+  max-height: 100em;
+}
+.no-touch .radio-options:hover li,  .active .radio-options li {
+    position: relative; }
+.no-touch .radio-options:hover label, .active .radio-options label {
+    opacity: 1;
+    transition: 0.5s; }
+
+.radio-options .checked label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75em;
+  background: #1b9e4d;
+  visibility: visible;
+  z-index: 2; }

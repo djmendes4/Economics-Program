@@ -1,48 +1,57 @@
 /*jslint devel:true plusplus:true */
 
-var GenerateForm = {
-	variables: {
-		currentFlow: 0,
-		flowTypes: [[0, ['Select Flow Type', 1]],
-				   [1, ['Principal', 0]],
-				   [2, ['Annuity', 0]],
-				   [3, ['Gradient', 0]]],
-		principalFlow: [1, [0, 1]]
-	},
+var GenerateForm = function () {
+	'use strict';
+	this.currentFlow = 0;
+	this.flowTypes = [[0, null],
+					  [1, this.refresh(this.principalFlow)],
+					  [2, this.annuityFlow],
+					  [3, this.gradientFlow]];
+	this.principalFlow = 10;
+	this.annuityFlow = 10;
+	this.gradientFlow = 10;
 
-	initialize: function () {
-		'use strict';
-	},
+	this.initialize = function () {
 
-	refresh: function () {
-		'use strict';
+	};
 
-		var newInput = Object, newTextNode = Object;
-		this.variables.currentFlow = document.getElementById('addFlowElement').value;
+	this.refresh = function (arg1) {
+		alert('refresh() called');
 
-		this.clear();
+//		var newInput = Object, newTextNode = Object;
+//
+//		this.clear();
+//
+//		console.log(this.variables.flowTypes);
+//		console.log(this.variables.flowTypes[this.variables.currentFlow]);
+//
+//		newInput = document.createElement('input');
+//		newInput.setAttribute('type', this.variables.flowTypes[this.variables.currentFlow]);
+//		newInput.setAttribute('name', this.variables.flowTypes[this.variables.currentFlow][1][0]);
+//		newInput.setAttribute('value', this.variables.Flow[1][0]);
+//
+//		newInput = document.createElement('input');
+//		newInput.setAttribute('type', 'number');
+//
+//		document.forms.namedItem('economics').appendChild(newInput);
+	};
 
-		newInput = document.createElement('input');
-		newInput.setAttribute('type', 'number');
-		newInput.setAttribute('name', this.variables.flowTypes[this.variables.currentFlow][1][0]);
-		newInput.setAttribute('value', this.variables.principalFlow[1][0]);
-
-		document.forms.namedItem('economics').appendChild(newInput);
-	},
-
-	clear: function () {
-		'use strict';
-
+	this.clear = function () {
 		document.forms.namedItem('economics').innerHTML = '';
-	}
+	};
 };
 
 window.onload = function () {
     'use strict';
 
-	GenerateForm.initialize();
+	var generateform = new GenerateForm();
+	generateform.initialize();
 
 	document.getElementById('addFlowElement').onchange = function () {
-		GenerateForm.refresh();
+		generateform.currentFlow = document.getElementById('addFlowElement').value;
+
+		console.log(generateform.flowTypes[1][1]);
+
+		generateform.refresh(generateform.flowTypes[1][1]);
 	};
 };

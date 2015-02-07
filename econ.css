@@ -1,56 +1,67 @@
-#container {
-	width: 800px;
+body {
+	margin: 10px;
+}
+
+body * {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+/*	Layout Rules  */
+
+.outer-wrapper {
 	margin: 0 auto;
-	position: relative;
-	top: 12px;
 }
 
-#formHeader {
+.inner-wrapper {
+	margin: 0px auto 6px auto;
+}
+
+.header {
 	width: inherit;
-	height: 40px;
-	margin: 8px -8px;
+	height: 36px;
+	margin: 20px auto 6px auto;
 	padding: 8px;
-	background-color: rgba(0,0,0,0.3);
+	background: rgba(0,0,0, 0.5);
 }
 
-#formHeader > p#title {
-	width: inherit;
-	height: inherit;
-	display: table-cell;
-	vertical-align: middle;
+.header > p.title {
+	position: relative;
+	top: 50%;
+	transform: translateY(-45%);
 	text-align: center;
 	font-size: 32px;
 	font-weight: bold;
 }
 
-#formContainer {
-	width: 25%;
-	height: auto;
-	margin: 8px -8px;
-	padding: 8px;
-	background-color: rgba(0,0,0,0.3);
+.footer {
+	margin: 0px auto 6px auto;
+	background: orange;
 }
 
-#flowType > select#addFlowElement {
-	width: 60%;
-	height: 19px;
-	display: inherit;
-	margin: 0 auto;
-	text-indent: 4px;
+.section-1 {
+	background: red;
 }
 
-select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+.section-2 {
+	background: yellow;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-	margin: 0;
+.section-3 {
+	background: green;
 }
 
-input.default {
-	font-weight: bold;
-	color: rgba(0,0,0,0.6);
+.section-4 {
+	background: purple;
+}
+
+.section-5 {
+	margin: 0px auto 6px auto;
+	background: lightblue;
+}
+
+.content {
+	text-align: center;
+	border-radius: 5px;
 }
